@@ -16,7 +16,7 @@ const LazyControlPanel = lazy(() =>
 import { Button } from '~/components/ui/Button';
 import { Dialog, DialogButton, DialogDescription, DialogRoot, DialogTitle } from '~/components/ui/Dialog';
 import { DocumentationPanel } from '~/components/ui/DocumentationPanel';
-import { SettingsButton, HelpButton } from '~/components/ui/SettingsButton';
+import { HelpButton } from '~/components/ui/SettingsButton';
 import { ThemeSwitch } from '~/components/ui/ThemeSwitch';
 import { useSearchFilter } from '~/lib/hooks/useSearchFilter';
 import { db, deleteById, getAll, chatId, type ChatHistoryItem, useChatHistory } from '~/lib/persistence';
@@ -333,11 +333,6 @@ export const Menu = () => {
     loadEntries(); // Reload the list after duplication
   };
 
-  const handleSettingsClick = () => {
-    setIsSettingsOpen(true);
-    setOpen(false);
-  };
-
   const handleSettingsClose = () => {
     setIsSettingsOpen(false);
     setSettingsInitialTab(undefined);
@@ -547,10 +542,7 @@ export const Menu = () => {
               </Dialog>
             </DialogRoot>
           </div>
-          <div className="flex items-center justify-between border-t border-gray-200 dark:border-gray-800 px-4 py-3">
-            <div className="flex items-center gap-3">
-              <SettingsButton onClick={handleSettingsClick} />
-            </div>
+          <div className="flex items-center justify-end border-t border-gray-200 dark:border-gray-800 px-4 py-3">
             <ThemeSwitch />
           </div>
         </div>
