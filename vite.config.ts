@@ -29,6 +29,9 @@ export default defineConfig((config) => {
     build: {
       target: 'esnext',
     },
+    preview: {
+      allowedHosts: ['nuvtra-build.onrender.com'],
+    },
     optimizeDeps: {
       include: [
         'react',
